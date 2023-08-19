@@ -35,7 +35,6 @@ const Table = ({data}) => {
 
     // Обработчик изменения количества элементов на странице
     const handleItemsPerPageChange = (item) => {
-        console.log(item)
         setItemsPerPage(item.value)
         setCurrentPage(1);
     };

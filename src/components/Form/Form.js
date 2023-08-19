@@ -124,11 +124,6 @@ const Form = () => {
                 <p style={{color: 'red'}}>{errorMessage}</p>
                 <button type="submit">Save</button>
             </form>
-
-            <Dropdown placeholder="Department" options={states} selected={opt}
-                      setSelected={setOpt}/>
-            {console.log(opt)}
-
             {showModal && <SuccessModal onClose={closeModal} />}
         </div>
     );

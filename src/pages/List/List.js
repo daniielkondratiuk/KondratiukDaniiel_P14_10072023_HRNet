@@ -53,7 +53,6 @@ const data = [
 
 const List = () => {
     const storedData = JSON.parse(localStorage.getItem('storageFormData'))
-    console.log(storedData)
     return (
         <div>
             <h1>Current Employees</h1>
