@@ -1,0 +1,18 @@
+/* Стили пагинации */
+.pagination {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Стили кнопок пагинации "следующая" и "предыдущая" */
+.pagination button {
+    font-size: 18px;
+}
+
+/* Стили активной кнопки пагинации */
+.pagination button.active {
+    background-color: #ddd;
+    color: blue;
+}

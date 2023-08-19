@@ -1,0 +1,54 @@
+.table__search {
+    display: flex;
+    column-gap: 5px;
+}
+.table__search > input,
+.table__search > select {
+    padding: 5px;
+}
+
+/* Общий стиль таблицы */
+.table__main {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 16px;
+    text-align: left;
+}
+.table__head .sort-icon {
+    margin-left: 3px;
+}
+
+th, td {
+    padding: 10px 5px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Стили заголовков таблицы */
+th {
+    cursor: pointer;
+    user-select: none;
+}
+
+th:hover {
+    background-color: #f2f2f2;
+}
+
+button {
+    margin: 5px;
+    background-color: #f2f2f2;
+    border: 1px solid #ddd;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* Стили кнопки пагинации в активном состоянии */
+button.active {
+    background-color: #ddd;
+}
+
+
+/* Стили активного столбца сортировки */
+th.sort-asc,
+th.sort-desc {
+    color: blue;
+}

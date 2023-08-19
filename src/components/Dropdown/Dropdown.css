@@ -1,0 +1,133 @@
+/* Стили для контейнера Dropdown */
+.dropdown-container {
+    width: 200px;
+    position: relative;
+    border: 1px solid var(--dropdown-border-color, #ccc);
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Стили для заголовка Dropdown */
+.dropdown-header {
+    cursor: pointer;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: background-color 0.2s ease;
+    background-color: var(--dropdown-bg-color, #f0f0f0);
+    color: var(--dropdown-text-color, #333);
+}
+
+/* Стили для иконок */
+.dropdown-header svg {
+    font-size: 14px;
+}
+
+/* Стили для выпадающего списка */
+.dropdown-list {
+    width: 100%;
+    position: absolute;
+    top: 110%;
+    left: -1px;
+    border: 1px solid var(--dropdown-border-color, #ccc);
+    background-color: var(--dropdown-bg-color, #f0f0f0);
+    color: var(--dropdown-text-color, #333);
+    z-index: 100;
+    max-height: 200px;
+    overflow-y: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform-origin: top;
+    transform: scaleY(0);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+/* Стили для элементов списка */
+.dropdown-item {
+    padding: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Стили для hover-эффекта элементов списка */
+.dropdown-item:hover {
+    background-color: var(--dropdown-item-hover-bg-color, #f0f0f0);
+}
+
+/* Стили для выбранного элемента */
+.dropdown-item.selected {
+    background-color: var(--dropdown-item-selected-bg-color, #f0f0f0);
+}
+
+/* Стили для открытого списка */
+.dropdown-container.open .dropdown-list {
+    opacity: 1;
+    transform: scaleY(1);
+}
+
+/* Стили для разных цветовых тем */
+.primary {
+    --dropdown-bg-color: #007bff;
+    --dropdown-text-color: #fff;
+    --dropdown-border-color: #007bff;
+    --dropdown-item-hover-bg-color: #0056b3;
+    --dropdown-item-selected-bg-color: #0056b3;
+}
+
+.secondary {
+    --dropdown-bg-color: #6c757d;
+    --dropdown-text-color: #fff;
+    --dropdown-border-color: #6c757d;
+    --dropdown-item-hover-bg-color: #5a6268;
+    --dropdown-item-selected-bg-color: #5a6268;
+}
+
+.success {
+    --dropdown-bg-color: #28a745;
+    --dropdown-text-color: #fff;
+    --dropdown-border-color: #28a745;
+    --dropdown-item-hover-bg-color: #1f8d39;
+    --dropdown-item-selected-bg-color: #1f8d39;
+}
+
+.danger {
+    --dropdown-bg-color: #dc3545;
+    --dropdown-text-color: #fff;
+    --dropdown-border-color: #dc3545;
+    --dropdown-item-hover-bg-color: #c82333;
+    --dropdown-item-selected-bg-color: #c82333;
+}
+
+.warning {
+    --dropdown-bg-color: #ffc107;
+    --dropdown-text-color: #333;
+    --dropdown-border-color: #ffc107;
+    --dropdown-item-hover-bg-color: #e0a800;
+    --dropdown-item-selected-bg-color: #e0a800;
+}
+
+.info {
+    --dropdown-bg-color: #17a2b8;
+    --dropdown-text-color: #fff;
+    --dropdown-border-color: #17a2b8;
+    --dropdown-item-hover-bg-color: #138496;
+    --dropdown-item-selected-bg-color: #138496;
+}
+
+.light {
+    --dropdown-bg-color: #f8f9fa;
+    --dropdown-text-color: #333;
+    --dropdown-border-color: #f8f9fa;
+    --dropdown-item-hover-bg-color: #e0e0e0;
+    --dropdown-item-selected-bg-color: #e0e0e0;
+}
+
+.dark {
+    --dropdown-bg-color: #343a40;
+    --dropdown-text-color: #f0f0f0;
+    --dropdown-border-color: #343a40;
+    --dropdown-item-hover-bg-color: #1d2124;
+    --dropdown-item-selected-bg-color: #1d2124;
+}

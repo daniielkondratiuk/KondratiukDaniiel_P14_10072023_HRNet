@@ -1,0 +1,79 @@
+/* Стили для контейнера Input */
+.input-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 16px;
+}
+
+/* Стили для заголовка Input */
+.input-label {
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+/* Стили для самого поля ввода */
+.input-field {
+    padding: 8px;
+    border: 2px solid var(--input-border-color, #ccc);
+    border-radius: 4px;
+    font-size: 14px;
+    transition: border-color 0.2s ease;
+    background-color: var(--input-bg-color, #ffffff);
+}
+
+/* Стили для фокуса поля ввода */
+.input-field:focus {
+    outline: none;
+    border-color: var(--input-focus-border-color, #007bff);
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+/* Стили для разных цветовых тем */
+.primary {
+    --input-border-color: #007bff;
+    --input-focus-border-color: #007bff;
+    --input-bg-color: #fff;
+}
+
+.secondary {
+    --input-border-color: #6c757d;
+    --input-focus-border-color: #6c757d;
+    --input-bg-color: #fff;
+}
+
+.success {
+    --input-border-color: #28a745;
+    --input-focus-border-color: #28a745;
+    --input-bg-color: #fff;
+}
+
+.danger {
+    --input-border-color: #dc3545;
+    --input-focus-border-color: #dc3545;
+    --input-bg-color: #fff;
+}
+
+.warning {
+    --input-border-color: #ffc107;
+    --input-focus-border-color: #ffc107;
+    --input-bg-color: #fff;
+}
+
+.info {
+    --input-border-color: #17a2b8;
+    --input-focus-border-color: #17a2b8;
+    --input-bg-color: #fff;
+}
+
+.light {
+    --input-border-color: #f8f9fa;
+    --input-focus-border-color: #f8f9fa;
+    --input-bg-color: #fff;
+}
+
+.dark {
+    --input-border-color: #343a40;
+    --input-focus-border-color: #343a40;
+    --input-bg-color: #fff;
+}
