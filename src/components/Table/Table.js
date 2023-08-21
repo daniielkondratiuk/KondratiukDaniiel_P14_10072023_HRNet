@@ -41,6 +41,7 @@ const Table = ({data}) => {
 
     // Обработчик сортировки
     const handleSort = (key) => {
+        console.log(key, sortKey)
         if (sortKey === key) {
             setSortDirection((prev) => {
                 if (prev === 'default') return 'asc';
@@ -66,6 +67,8 @@ const Table = ({data}) => {
                 return sortDirection === 'asc' ? Date.parse(valueA) - Date.parse(valueB) : Date.parse(valueB) - Date.parse(valueA);
             }
             return sortDirection === 'asc' ? valueA.localeCompare(valueB) : valueB.localeCompare(valueA);
+        }if(typeof valueA === 'object' && typeof valueB === 'object'){
+            return sortDirection === 'asc' ? valueA.value.localeCompare(valueB.value) : valueB.value.localeCompare(valueA.value);
         }
         if (typeof valueA === 'number' && typeof valueB === 'number') {
             return sortDirection === 'asc' ? valueA - valueB : valueB - valueA;
