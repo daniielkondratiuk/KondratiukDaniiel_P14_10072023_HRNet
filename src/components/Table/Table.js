@@ -41,7 +41,6 @@ const Table = ({data}) => {
 
     // Обработчик сортировки
     const handleSort = (key) => {
-        console.log(key, sortKey)
         if (sortKey === key) {
             setSortDirection((prev) => {
                 if (prev === 'default') return 'asc';

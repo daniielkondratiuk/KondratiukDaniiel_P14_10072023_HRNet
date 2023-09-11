@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Dropdown from "../../components/Dropdown/Dropdown";
+import Dropdown from 'dk-custom-dropdown'
 import Input from "../Input/Input";
 import states from "../../dropdownOptions/states";
 import department from "../../dropdownOptions/department";
@@ -21,7 +21,6 @@ const Form = () => {
     const [formData, setFormData] = useState(initialFormData);
     const [errorMessage, setErrorMessage] = useState('');
     const [showModal, setShowModal] = useState(false);
-    const [opt,setOpt] = useState({})
 
     const handleChange = (field, value) => {
         setFormData((prevData) => ({
@@ -73,7 +72,6 @@ const Form = () => {
 
     return (
         <div>
-            <h2>Create Employee</h2>
             <form className="form" onSubmit={handleSubmit}>
                 <Input
                     type="text"
