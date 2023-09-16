@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react'
 import Dropdown from 'dk-custom-dropdown'
-import Input from "../Input/Input";
-import states from "../../dropdownOptions/states";
-import department from "../../dropdownOptions/department";
-import SuccessModal from "../SuccessModal/SuccessModal";
+import Input from '../Input/Input'
+import states from '../../dropdownOptions/states'
+import department from '../../dropdownOptions/department'
+import SuccessModal from '../SuccessModal/SuccessModal'
 import './Form.css'
 
 const Form = () => {
@@ -16,45 +16,47 @@ const Form = () => {
         city: '',
         state: {},
         code: '',
-        department: {},
+        department: {}
     }
-    const [formData, setFormData] = useState(initialFormData);
-    const [errorMessage, setErrorMessage] = useState('');
-    const [showModal, setShowModal] = useState(false);
+    const [formData, setFormData] = useState(initialFormData)
+    const [errorMessage, setErrorMessage] = useState('')
+    const [showModal, setShowModal] = useState(false)
 
     const handleChange = (field, value) => {
-        setFormData((prevData) => ({
+        setFormData(prevData => ({
             id: new Date().getTime(),
             ...prevData,
-            [field]: value,
-        }));
-    };
+            [field]: value
+        }))
+    }
 
-    const handleSubmit = (event) => {
-        event.preventDefault();
+    const handleSubmit = event => {
+        event.preventDefault()
         if (validateForm()) {
-            const storageFormData = getFormData();
-            storageFormData.push(formData);
-            localStorage.setItem('storageFormData', JSON.stringify(storageFormData));
+            const storageFormData = getFormData()
+            storageFormData.push(formData)
+            localStorage.setItem(
+                'storageFormData',
+                JSON.stringify(storageFormData)
+            )
 
-            setFormData(initialFormData);
-            setErrorMessage('');
+            setFormData(initialFormData)
+            setErrorMessage('')
 
-            setShowModal(true); // Show the success modal
+            setShowModal(true) // Show the success modal
         } else {
-            setErrorMessage('Пожалуйста, заполните все обязательные поля.');
+            setErrorMessage('Please fill out all fields.')
         }
-    };
+    }
 
     const getFormData = () => {
-        const storedFormData = localStorage.getItem('storageFormData');
-        return storedFormData ? JSON.parse(storedFormData) : [];
-    };
+        const storedFormData = localStorage.getItem('storageFormData')
+        return storedFormData ? JSON.parse(storedFormData) : []
+    }
 
     const closeModal = () => {
-        setShowModal(false); // Close the success modal
-    };
-
+        setShowModal(false) // Close the success modal
+    }
 
     const validateForm = () => {
         return (
@@ -67,64 +69,78 @@ const Form = () => {
             formData.state.value &&
             formData.code &&
             formData.department.value
-        );
-    };
+        )
+    }
 
     return (
         <div>
-            <form className="form" onSubmit={handleSubmit}>
+            <form className='form' onSubmit={handleSubmit}>
                 <Input
-                    type="text"
-                    placeholder="First Name"
+                    type='text'
+                    placeholder='First Name'
                     value={formData.name}
-                    setValue={(value) => handleChange('name', value)}
+                    setValue={value => handleChange('name', value)}
                 />
                 <Input
-                    type="text"
-                    placeholder="Last Name"
+                    type='text'
+                    placeholder='Last Name'
                     value={formData.lastname}
-                    setValue={(value) => handleChange('lastname', value)}
+                    setValue={value => handleChange('lastname', value)}
                 />
                 <Input
-                    type="date"
-                    placeholder="Date of Birth"
+                    type='date'
+                    placeholder='Date of Birth'
                     value={formData.birthday}
-                    setValue={(value) => handleChange('birthday', value)}
+                    setValue={value => handleChange('birthday', value)}
                 />
                 <Input
-                    type="date"
-                    placeholder="Start Date"
+                    type='date'
+                    placeholder='Start Date'
                     value={formData.startDate}
-                    setValue={(value) => handleChange('startDate', value)}
+                    setValue={value => handleChange('startDate', value)}
                 />
                 <Input
-                    type="text"
-                    placeholder="Street"
+                    type='text'
+                    placeholder='Street'
                     value={formData.street}
-                    setValue={(value) => handleChange('street', value)}
+                    setValue={value => handleChange('street', value)}
                 />
                 <Input
-                    type="text"
-                    placeholder="City"
+                    type='text'
+                    placeholder='City'
                     value={formData.city}
-                    setValue={(value) => handleChange('city', value)}
+                    setValue={value => handleChange('city', value)}
                 />
-                <Dropdown placeholder="State" options={states} selected={formData.state}
-                          setSelected={(value) => handleChange('state', value)}/>
+                <Dropdown
+                    placeholder='State'
+                    options={states}
+                    selected={formData.state}
+                    setSelected={value => handleChange('state', value)}
+                />
                 <Input
-                    type="text"
-                    placeholder="Zip Code"
+                    type='text'
+                    placeholder='Zip Code'
                     value={formData.code}
-                    setValue={(value) => handleChange('code', value)}
+                    setValue={value => handleChange('code', value)}
                 />
-                <Dropdown placeholder="Department" options={department} selected={formData.department}
-                          setSelected={(value) => handleChange('department', value)}/>
-                <p style={{color: 'red'}}>{errorMessage}</p>
-                <button type="submit">Save</button>
+                <Dropdown
+                    placeholder='Department'
+                    options={department}
+                    selected={formData.department}
+                    setSelected={value => handleChange('department', value)}
+                />
+                <p
+                    className={`form-valid-message ${
+                        errorMessage ? 'show' : ''
+                    }`}
+                >
+                    {errorMessage}
+                </p>
+                <button type='submit'>Save</button>
             </form>
             {showModal && <SuccessModal onClose={closeModal} />}
         </div>
-    );
-};
+    )
+}
 
-export default Form;
+export default Form

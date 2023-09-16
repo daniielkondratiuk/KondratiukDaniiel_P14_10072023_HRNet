@@ -1,18 +1,14 @@
-/* Стили для контейнера Input */
 .input-container {
     width: 100%;
     display: flex;
     flex-direction: column;
-    margin-bottom: 16px;
 }
 
-/* Стили для заголовка Input */
 .input-label {
     font-weight: bold;
     margin-bottom: 8px;
 }
 
-/* Стили для самого поля ввода */
 .input-field {
     padding: 8px;
     border: 2px solid var(--input-border-color, #ccc);
@@ -22,14 +18,12 @@
     background-color: var(--input-bg-color, #ffffff);
 }
 
-/* Стили для фокуса поля ввода */
 .input-field:focus {
     outline: none;
     border-color: var(--input-focus-border-color, #007bff);
     box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
 }
 
-/* Стили для разных цветовых тем */
 .primary {
     --input-border-color: #007bff;
     --input-focus-border-color: #007bff;
