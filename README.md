@@ -6,19 +6,19 @@ Welcome to HRnet! This is our company's internal application to create and view 
 
 1. Clone the repository of HRnet :
 
-    `git clone https://github.com/daniielkondratiuk/KondratiukDaniiel_P14_10072023_HRNet`
+   `git clone https://github.com/daniielkondratiuk/KondratiukDaniiel_P14_10072023_HRNet`
 
 2. Inside this repository, install dependencies:
 
-    ### `npm install`
+   `npm install`
 
 3. Frontend launch on port 3000:
 
-    ### `npm start`
+   `npm start`
 
 4. Backend(json server) launch on port 8888:
 
-    ### `npm run db`
+   `npm run db`
 
 ## Environments
 
