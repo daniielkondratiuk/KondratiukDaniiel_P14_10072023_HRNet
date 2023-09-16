@@ -9,6 +9,7 @@
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^13.5.0",
+        "axios": "^1.5.0",
         "dk-custom-dropdown": "^1.0.0",
         "prop-types": "^15.8.1",
         "react": "^18.2.0",
@@ -19,6 +20,8 @@
     },
     "scripts": {
         "start": "react-scripts start",
+        "db": "json-server --watch db.json --port 8888",
+        "prettier": "npx prettier --write .",
         "build": "react-scripts build"
     },
     "eslintConfig": {
@@ -33,6 +36,7 @@
         "not op_mini all"
     ],
     "devDependencies": {
+        "json-server": "^0.17.3",
         "prettier": "^3.0.3"
     }
 }

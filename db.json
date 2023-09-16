@@ -1,0 +1,40 @@
+{
+  "formData": [
+    {
+      "id": 1694852429337,
+      "name": "Daniiel",
+      "lastname": "Kondratiuk",
+      "birthday": "1995-01-13",
+      "startDate": "2023-09-13",
+      "street": "23B Rue des Petits Champs",
+      "city": "Schiltigheim",
+      "state": {
+        "label": "Alaska",
+        "value": "AK"
+      },
+      "code": "67300",
+      "department": {
+        "label": "Sales",
+        "value": "Sales"
+      }
+    },
+    {
+      "id": 1694853386832,
+      "name": "Mia",
+      "lastname": "Kondratiuk",
+      "birthday": "2000-01-03",
+      "startDate": "2023-08-25",
+      "street": "11 rue de Mutzig",
+      "city": "Strasbourg",
+      "state": {
+        "label": "Colorado",
+        "value": "CO"
+      },
+      "code": "67000",
+      "department": {
+        "label": "Human Resources",
+        "value": "Human Resources"
+      }
+    }
+  ]
+}

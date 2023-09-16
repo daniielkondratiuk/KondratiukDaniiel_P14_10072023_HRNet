@@ -4,6 +4,8 @@ import Input from '../Input/Input'
 import states from '../../dropdownOptions/states'
 import department from '../../dropdownOptions/department'
 import SuccessModal from '../SuccessModal/SuccessModal'
+import axios from 'axios'
+
 import './Form.css'
 
 const Form = () => {
@@ -30,29 +32,56 @@ const Form = () => {
         }))
     }
 
-    const handleSubmit = event => {
+    const handleSubmit = async event => {
         event.preventDefault()
         if (validateForm()) {
-            const storageFormData = getFormData()
-            storageFormData.push(formData)
-            localStorage.setItem(
-                'storageFormData',
-                JSON.stringify(storageFormData)
-            )
+            try {
+                const res = await axios.post(
+                    'http://localhost:8888/formData',
+                    formData
+                )
 
-            setFormData(initialFormData)
-            setErrorMessage('')
-
-            setShowModal(true) // Show the success modal
+                if (res.status === 201) {
+                    setFormData(initialFormData)
+                    setErrorMessage('')
+                    setShowModal(true)
+                } else {
+                    setErrorMessage('Failed to save data.')
+                }
+            } catch (error) {
+                console.error('Error while saving data:', error)
+                setErrorMessage('Error while saving data.')
+            }
         } else {
             setErrorMessage('Please fill out all fields.')
         }
     }
 
-    const getFormData = () => {
-        const storedFormData = localStorage.getItem('storageFormData')
-        return storedFormData ? JSON.parse(storedFormData) : []
-    }
+    // handleSubmit to localStorage
+
+    // const handleSubmit = event => {
+    //     event.preventDefault()
+    //     if (validateForm()) {
+    //         const storageFormData = getFormData()
+    //         storageFormData.push(formData)
+    //         localStorage.setItem(
+    //             'storageFormData',
+    //             JSON.stringify(storageFormData)
+    //         )
+    //
+    //         setFormData(initialFormData)
+    //         setErrorMessage('')
+    //
+    //         setShowModal(true) // Show the success modal
+    //     } else {
+    //         setErrorMessage('Please fill out all fields.')
+    //     }
+    // }
+
+    // const getFormData = () => {
+    //     const storedFormData = localStorage.getItem('storageFormData')
+    //     return storedFormData ? JSON.parse(storedFormData) : []
+    // }
 
     const closeModal = () => {
         setShowModal(false) // Close the success modal
