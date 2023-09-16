@@ -78,36 +78,42 @@ const Form = () => {
                 <Input
                     type='text'
                     placeholder='First Name'
+                    label='First Name'
                     value={formData.name}
                     setValue={value => handleChange('name', value)}
                 />
                 <Input
                     type='text'
                     placeholder='Last Name'
+                    label='Last Name'
                     value={formData.lastname}
                     setValue={value => handleChange('lastname', value)}
                 />
                 <Input
                     type='date'
                     placeholder='Date of Birth'
+                    label='Date of Birth'
                     value={formData.birthday}
                     setValue={value => handleChange('birthday', value)}
                 />
                 <Input
                     type='date'
                     placeholder='Start Date'
+                    label='Start Date'
                     value={formData.startDate}
                     setValue={value => handleChange('startDate', value)}
                 />
                 <Input
                     type='text'
                     placeholder='Street'
+                    label='Street'
                     value={formData.street}
                     setValue={value => handleChange('street', value)}
                 />
                 <Input
                     type='text'
                     placeholder='City'
+                    label='City'
                     value={formData.city}
                     setValue={value => handleChange('city', value)}
                 />
@@ -120,6 +126,7 @@ const Form = () => {
                 <Input
                     type='text'
                     placeholder='Zip Code'
+                    label='Zip Code'
                     value={formData.code}
                     setValue={value => handleChange('code', value)}
                 />
