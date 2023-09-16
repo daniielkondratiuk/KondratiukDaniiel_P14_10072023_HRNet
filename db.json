@@ -35,6 +35,60 @@
         "label": "Human Resources",
         "value": "Human Resources"
       }
+    },
+    {
+      "id": 1694855121138,
+      "name": "Anhelina",
+      "lastname": "Chipka",
+      "birthday": "1997-09-25",
+      "startDate": "2022-09-11",
+      "street": "23b rue des Petits Champ",
+      "city": "Schiltigheim",
+      "state": {
+        "label": "North Dakota",
+        "value": "ND"
+      },
+      "code": "67300",
+      "department": {
+        "label": "Sales",
+        "value": "Sales"
+      }
+    },
+    {
+      "id": 1694866225715,
+      "name": "Daniiel",
+      "lastname": "Kondratiuk",
+      "birthday": "2023-09-01",
+      "startDate": "2023-09-22",
+      "street": "23B Rue des Petits Champs",
+      "city": "Schiltigheim",
+      "state": {
+        "label": "Alaska",
+        "value": "AK"
+      },
+      "code": "67300",
+      "department": {
+        "label": "Human Resources",
+        "value": "Human Resources"
+      }
+    },
+    {
+      "id": 1694866740333,
+      "name": "Daniiel1",
+      "lastname": "Kondratiuk",
+      "birthday": "1995-01-13",
+      "startDate": "1995-01-13",
+      "street": "23B Rue des Petits Champs",
+      "city": "Schiltigheim",
+      "state": {
+        "label": "Alabama",
+        "value": "AL"
+      },
+      "code": "67300",
+      "department": {
+        "label": "Legal",
+        "value": "Legal"
+      }
     }
   ]
 }

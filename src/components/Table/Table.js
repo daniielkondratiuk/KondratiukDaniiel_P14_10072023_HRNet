@@ -3,7 +3,7 @@ import './Table.css'
 import Pagination from '../Pagination/Pagination'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSortUp, faSortDown, faSort } from '@fortawesome/free-solid-svg-icons'
-import Dropdown from '../Dropdown/Dropdown'
+import Dropdown from 'dk-custom-dropdown'
 import tableRowPerPage from '../../dropdownOptions/tableRowPerPage'
 import Input from '../Input/Input'
 
@@ -141,6 +141,7 @@ const Table = ({ data }) => {
         <div>
             <div className='table__search'>
                 <Dropdown
+                    placeholder=''
                     options={tableRowPerPage}
                     selected={{ label: itemsPerPage, value: itemsPerPage }}
                     setSelected={handleItemsPerPageChange}
